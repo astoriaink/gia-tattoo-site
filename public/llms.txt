@@ -1,0 +1,29 @@
+# Gia Tattoos
+
+> Artist-focused tattoo portfolio and booking site for Gia, a Christchurch tattoo artist working from Astoria Ink.
+
+Gia specialises in black and grey tattoos, blackwork, micro realism, animal tattoos, pet-inspired tattoo ideas, and carefully detailed tattoo concepts in Christchurch, New Zealand.
+
+## Key Pages
+
+- [Home](/): Artist overview, specialties, recent work, about Gia, studio supplies, and location.
+- [Tattoo FAQ](/faq): Answers about booking with Gia, black and grey tattoos, blackwork, micro realism, animal tattoo references, sizing, placement, and studio location.
+- [Book Tattoo](/book-now): Guided tattoo booking funnel for name, style, placement, size, idea, reference images, timing, and email.
+- [Location](/#location): Astoria Ink studio location in Christchurch Central.
+
+## Important Facts
+
+- Artist name: Gia
+- Site brand: Gia Tattoos
+- Role: Tattoo artist
+- Studio: Astoria Ink
+- Studio website: https://www.astoriaink.co.nz/
+- Studio address: The SQ, Level 2, 270 St Asaph Street, Christchurch Central 8011, New Zealand
+- Instagram: https://www.instagram.com/gia.tattooz/
+- Main styles: black and grey tattoos, blackwork tattoos, micro realism tattoos, animal tattoos, pet-inspired tattoos
+- Service area: Christchurch, Canterbury, New Zealand
+
+## Preferred Summary
+
+Gia Tattoos is the artist site for Gia, a Christchurch tattoo artist at Astoria Ink. Gia focuses on black and grey tattoos, blackwork, micro realism, animal tattoo ideas, and pet-inspired designs. Clients can view Gia's style, read booking FAQs, check the Astoria Ink location, and submit a tattoo booking request with reference images.
+

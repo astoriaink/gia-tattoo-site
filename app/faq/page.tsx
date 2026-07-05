@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import SiteShell from '../components/site-shell';
 
+const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? 'https://gia-tattoo-site.vercel.app').replace(/\/$/, '');
+
 const faqs = [
   {
     question: 'Does Gia do black and grey tattoos in Christchurch?',
@@ -78,6 +80,15 @@ export default function FaqPage() {
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
+    '@id': `${siteUrl}/faq#faq`,
+    url: `${siteUrl}/faq`,
+    name: 'Gia Tattoo FAQ',
+    isPartOf: {
+      '@id': `${siteUrl}/#website`,
+    },
+    about: {
+      '@id': `${siteUrl}/#gia`,
+    },
     mainEntity: faqs.map((faq) => ({
       '@type': 'Question',
       name: faq.question,

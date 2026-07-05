@@ -1,10 +1,22 @@
 import type { Metadata, Viewport } from 'next';
 import './globals.css';
 
+const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? 'https://gia-tattoo-site.vercel.app').replace(/\/$/, '');
+const astoriaInkUrl = 'https://www.astoriaink.co.nz/';
+const giaInstagramUrl = 'https://www.instagram.com/gia.tattooz/';
+const studioAddress = {
+  '@type': 'PostalAddress',
+  streetAddress: 'The SQ, Level 2, 270 St Asaph Street',
+  addressLocality: 'Christchurch Central',
+  addressRegion: 'Canterbury',
+  postalCode: '8011',
+  addressCountry: 'NZ',
+};
+
 export const metadata: Metadata = {
   title: {
     default: 'Gia Tattoo Artist Christchurch | Black & Grey Micro Realism',
-    template: '%s | Astoria Ink',
+    template: '%s | Gia Tattoos',
   },
   description:
     'Gia is a Christchurch tattoo artist at Astoria Ink specialising in black and grey tattoos, micro realism, blackwork, animal tattoos, and pet-inspired designs.',
@@ -21,7 +33,7 @@ export const metadata: Metadata = {
     'black and grey tattoos',
     'Christchurch tattoos',
   ],
-  metadataBase: new URL('https://www.astoria-ink.com'),
+  metadataBase: new URL(siteUrl),
   alternates: {
     canonical: '/',
   },
@@ -30,8 +42,8 @@ export const metadata: Metadata = {
     description:
       'Black and grey tattoos, micro realism, blackwork, animal tattoos, and pet-inspired work by Gia at Astoria Ink in Christchurch.',
     type: 'website',
-    url: 'https://www.astoria-ink.com',
-    siteName: 'Astoria Ink',
+    url: siteUrl,
+    siteName: 'Gia Tattoos',
   },
   twitter: {
     card: 'summary_large_image',
@@ -47,6 +59,61 @@ export const viewport: Viewport = {
   maximumScale: 1,
 };
 
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebSite',
+      '@id': `${siteUrl}/#website`,
+      name: 'Gia Tattoos',
+      url: siteUrl,
+      inLanguage: 'en-NZ',
+      description:
+        'Artist-focused tattoo portfolio and booking site for Gia, a Christchurch tattoo artist at Astoria Ink.',
+      publisher: {
+        '@id': `${siteUrl}/#gia`,
+      },
+    },
+    {
+      '@type': 'Person',
+      '@id': `${siteUrl}/#gia`,
+      name: 'Gia',
+      url: siteUrl,
+      image: `${siteUrl}/artist/gia-main-portrait.jpg`,
+      jobTitle: 'Tattoo Artist',
+      worksFor: {
+        '@id': `${astoriaInkUrl}#tattoo-parlor`,
+      },
+      workLocation: {
+        '@id': `${astoriaInkUrl}#tattoo-parlor`,
+      },
+      sameAs: [giaInstagramUrl],
+      knowsAbout: [
+        'Black and grey tattoos',
+        'Blackwork tattoos',
+        'Micro realism tattoos',
+        'Animal tattoos',
+        'Pet-inspired tattoos',
+        'Christchurch tattoos',
+      ],
+      mainEntityOfPage: {
+        '@id': `${siteUrl}/#website`,
+      },
+    },
+    {
+      '@type': 'TattooParlor',
+      '@id': `${astoriaInkUrl}#tattoo-parlor`,
+      name: 'Astoria Ink',
+      url: astoriaInkUrl,
+      address: studioAddress,
+      areaServed: {
+        '@type': 'City',
+        name: 'Christchurch',
+      },
+    },
+  ],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -54,7 +121,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
+        {children}
+      </body>
     </html>
   );
 }
