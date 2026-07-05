@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://gia-tattoo-site.vercel.app/sitemap.xml
+
