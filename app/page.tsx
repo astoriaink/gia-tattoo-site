@@ -1,10 +1,9 @@
 'use client';
 
+import Link from 'next/link';
 import { useEffect } from 'react';
 import type { CSSProperties } from 'react';
 import SiteShell from './components/site-shell';
-
-const bookingUrl = 'https://www.astoriaink.co.nz/booknow';
 
 const specialties = [
   {
@@ -134,9 +133,9 @@ export default function HomePage() {
               grey tattoos, micro realism, blackwork, and animal tattoo concepts.
             </p>
             <div className="hero-actions">
-              <a href={bookingUrl} target="_blank" rel="noreferrer noopener" className="btn btn-primary reveal reveal-3">
-                Book tattoo
-              </a>
+              <Link href="/book-now" className="btn btn-primary reveal reveal-3">
+                Book consult
+              </Link>
               <a
                 href="https://www.instagram.com/gia.tattooz?igsh=dms0MDRqNWowc25y"
                 target="_blank"
@@ -311,9 +310,9 @@ export default function HomePage() {
               >
                 Open maps
               </a>
-              <a href={bookingUrl} target="_blank" rel="noreferrer noopener" className="btn btn-primary">
+              <Link href="/book-now" className="btn btn-primary">
                 Book tattoo
-              </a>
+              </Link>
             </div>
           </div>
         </div>

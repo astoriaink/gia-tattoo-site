@@ -4,8 +4,6 @@ import Link from 'next/link';
 import type { ReactNode } from 'react';
 import { useState } from 'react';
 
-const bookingUrl = 'https://www.astoriaink.co.nz/booknow';
-
 type SiteShellProps = {
   children: ReactNode;
 };
@@ -63,7 +61,7 @@ export default function SiteShell({ children }: SiteShellProps) {
             <Link href="/" onClick={() => setIsMenuOpen(false)}>Home</Link>
             <Link href="/faq" onClick={() => setIsMenuOpen(false)}>Tattoo FAQ</Link>
             <Link href="/#location" onClick={() => setIsMenuOpen(false)}>Location</Link>
-            <a href={bookingUrl} target="_blank" rel="noreferrer noopener" onClick={() => setIsMenuOpen(false)}>Book tattoo</a>
+            <Link href="/book-now" onClick={() => setIsMenuOpen(false)}>Book tattoo</Link>
           </nav>
         </div>
       </header>

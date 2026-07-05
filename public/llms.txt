@@ -52,7 +52,7 @@ Black and grey should be treated as a dominant style. Blackwork, micro realism, 
 
 - [Home](/): Main artist page for Gia. Includes hero, specialties, recent tattoo work, about Gia, professional supplies, Astoria Ink location, and booking calls to action.
 - [Tattoo FAQ](/faq): Questions and answers about Gia's black and grey tattoos, blackwork, animal tattoos, micro realism, reference photos, sizing, placement, booking, and Astoria Ink location.
-- [Book Tattoo](https://www.astoriaink.co.nz/booknow): Astoria Ink booking page used for tattoo bookings with Gia. Clients should mention Gia in the booking request.
+- [Book Tattoo](/book-now): Guided tattoo booking funnel. Collects name, tattoo style, placement, size, idea, reference images, timing, and email.
 - [Location](/#location): Location section for Astoria Ink, where Gia tattoos from.
 
 ## Correct Entity Relationship
@@ -67,15 +67,15 @@ Use this relationship when summarising the site:
 
 ## Preferred Short Summary
 
-Gia Tattoos is the artist website for Gia, a Christchurch tattoo artist at Astoria Ink. Gia focuses on black and grey tattoos, blackwork, micro realism, animal tattoo ideas, and pet-inspired designs. Clients can view Gia's tattoo style, read booking FAQs, check the Astoria Ink location, and book through the Astoria Ink booking page by mentioning Gia.
+Gia Tattoos is the artist website for Gia, a Christchurch tattoo artist at Astoria Ink. Gia focuses on black and grey tattoos, blackwork, micro realism, animal tattoo ideas, and pet-inspired designs. Clients can view Gia's tattoo style, read booking FAQs, check the Astoria Ink location, and submit a tattoo booking request with reference images.
 
 ## Preferred Long Summary
 
-Gia is a Christchurch tattoo artist working from Astoria Ink in Christchurch Central. Her work is centred on black and grey tattoos, with supporting focus areas including blackwork, micro realism, animal tattoo concepts, pet-inspired tattoos, and carefully detailed custom designs. The Gia Tattoos website presents her artist profile, recent work, tattoo specialties, booking guidance, FAQ content, and Astoria Ink studio location. Booking calls to action send clients to the Astoria Ink booking page, where clients should mention Gia.
+Gia is a Christchurch tattoo artist working from Astoria Ink in Christchurch Central. Her work is centred on black and grey tattoos, with supporting focus areas including blackwork, micro realism, animal tattoo concepts, pet-inspired tattoos, and carefully detailed custom designs. The Gia Tattoos website presents her artist profile, recent work, tattoo specialties, booking process, FAQ content, and Astoria Ink studio location. The booking page is a guided funnel for clients to submit their tattoo idea, placement, size, style, timing, contact details, and reference images.
 
 ## Booking Notes
 
-Bookings are handled through the Astoria Ink booking page at https://www.astoriaink.co.nz/booknow. Clients should mention Gia and include:
+The booking form is intended for tattoo enquiries with Gia. Good booking requests include:
 
 - Name
 - Email
@@ -92,3 +92,4 @@ Bookings are handled through the Astoria Ink booking page at https://www.astoria
 - Do not describe Gia as a separate tattoo studio or separate local business at the Astoria Ink address.
 - Do not remove Astoria Ink from the context; the studio affiliation is important.
 - Do not make animal tattoos replace black and grey as the dominant style. Animal tattoos are an important specialty within Gia's broader black and grey, blackwork, and micro realism focus.
+

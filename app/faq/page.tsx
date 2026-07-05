@@ -3,7 +3,6 @@ import Link from 'next/link';
 import SiteShell from '../components/site-shell';
 
 const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? 'https://gia-tattoo-site.vercel.app').replace(/\/$/, '');
-const bookingUrl = 'https://www.astoriaink.co.nz/booknow';
 
 const faqs = [
   {
@@ -49,7 +48,7 @@ const faqs = [
   {
     question: 'How do I book a tattoo with Gia?',
     answer:
-      'Use the Astoria Ink booking page and include your idea, placement, approximate size, preferred style, timing, reference notes, and reference images. Mention Gia so the request is directed to her.',
+      'Use the tattoo booking form and include your idea, placement, approximate size, preferred style, timing, reference notes, and reference images. Astoria Ink can then review the request and reply by email.',
   },
   {
     question: 'How much does a tattoo with Gia cost?',
@@ -62,9 +61,9 @@ const faqs = [
       'Yes. Gia works with clients to shape a tattoo idea into a design that suits the body, placement, size, contrast, and long-term clarity, especially for detailed black and grey or micro realism work.',
   },
   {
-    question: 'What should I include when booking?',
+    question: 'What should I include in the booking form?',
     answer:
-      'Include your name, email, tattoo placement, approximate size, style, timing, description of the idea, reference notes, and that you want to book with Gia. For animal tattoos, reference photos are especially helpful.',
+      'Include your name, email, tattoo placement, approximate size, style, timing, description of the idea, and reference notes. For animal tattoos, reference photos are especially helpful.',
   },
 ];
 
@@ -116,9 +115,9 @@ export default function FaqPage() {
               pet-inspired pieces, and micro realism with Gia at Astoria Ink Christchurch.
             </p>
             <div className="hero-actions">
-              <a href={bookingUrl} target="_blank" rel="noreferrer noopener" className="btn btn-primary">
+              <Link href="/book-now" className="btn btn-primary">
                 Book tattoo
-              </a>
+              </Link>
               <Link href="/#location" className="btn btn-secondary">
                 View location
               </Link>
