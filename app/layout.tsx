@@ -4,6 +4,7 @@ import './globals.css';
 const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? 'https://gia-tattoo-site.vercel.app').replace(/\/$/, '');
 const astoriaInkUrl = 'https://www.astoriaink.co.nz/';
 const giaInstagramUrl = 'https://www.instagram.com/gia.tattooz/';
+const giaTikTokUrl = 'https://www.tiktok.com/@gia.tattooz';
 const studioAddress = {
   '@type': 'PostalAddress',
   streetAddress: 'The SQ, Level 2, 270 St Asaph Street',
@@ -92,7 +93,7 @@ const structuredData = {
       workLocation: {
         '@id': `${astoriaInkUrl}#tattoo-parlor`,
       },
-      sameAs: [giaInstagramUrl],
+      sameAs: [giaInstagramUrl, giaTikTokUrl],
       knowsAbout: [
         'Black and grey tattoos',
         'Blackwork tattoos',

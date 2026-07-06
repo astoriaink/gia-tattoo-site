@@ -48,7 +48,7 @@ const faqs = [
   {
     question: 'How do I book a tattoo with Gia?',
     answer:
-      'Use the tattoo booking form and include your idea, placement, approximate size, preferred style, timing, reference notes, and reference images. Astoria Ink can then review the request and reply by email.',
+      'Use the tattoo booking form and include your idea, placement, approximate size, preferred style, timing, contact details, reference notes, and reference images. Astoria Ink can then review the request and reply.',
   },
   {
     question: 'How much does a tattoo with Gia cost?',
@@ -63,7 +63,7 @@ const faqs = [
   {
     question: 'What should I include in the booking form?',
     answer:
-      'Include your name, email, tattoo placement, approximate size, style, timing, description of the idea, and reference notes. For animal tattoos, reference photos are especially helpful.',
+      'Include your name, email, phone number, tattoo placement, approximate size, style, timing, description of the idea, and reference notes. For animal tattoos, reference photos are especially helpful.',
   },
 ];
 
