@@ -138,7 +138,7 @@ export default function HomePage() {
             </p>
             <div className="hero-actions">
               <Link href="/book-now" className="btn btn-primary reveal reveal-3">
-                Book consult
+                Book tattoo
               </Link>
               <a
                 href="https://www.instagram.com/gia.tattooz?igsh=dms0MDRqNWowc25y"
