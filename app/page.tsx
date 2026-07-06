@@ -39,7 +39,7 @@ const latestWork = [
     url: 'https://www.instagram.com/p/DWnE7ACj902/?igsh=MTZwNDl1YmJvbXE2eQ==',
   },
   {
-    title: 'Fine detail tattoo',
+    title: 'Whale shark tattoo',
     image: '/instagram-posts/gia-instagram-3.jpg',
     url: 'https://www.instagram.com/p/DZbwyCfPPEh/?igsh=MXczZzFoYzV2cTA4NQ==',
   },
