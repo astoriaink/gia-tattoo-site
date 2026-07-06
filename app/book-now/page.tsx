@@ -1,6 +1,6 @@
 'use client';
 
-import { FormEvent, useMemo, useState } from 'react';
+import { FormEvent, useEffect, useMemo, useState } from 'react';
 import SiteShell from '../components/site-shell';
 
 const styleOptions = ['Black & grey', 'Blackwork', 'Micro realism', 'Fine line', 'Lettering', 'Not sure yet'];
@@ -80,6 +80,21 @@ export default function BookNowPage() {
 
   const step = steps[stepIndex];
   const progress = Math.round(((stepIndex + 1) / steps.length) * 100);
+  const imagePreviews = useMemo(
+    () =>
+      data.imageFiles.map((file, index) => ({
+        id: `${file.name}-${file.size}-${file.lastModified}-${index}`,
+        name: file.name,
+        url: URL.createObjectURL(file),
+      })),
+    [data.imageFiles],
+  );
+
+  useEffect(() => {
+    return () => {
+      imagePreviews.forEach((preview) => URL.revokeObjectURL(preview.url));
+    };
+  }, [imagePreviews]);
 
   const canContinue = useMemo(() => {
     switch (stepIndex) {
@@ -297,14 +312,14 @@ export default function BookNowPage() {
                     </strong>
                   </label>
 
-                  {data.imageNames.length ? (
+                  {imagePreviews.length ? (
                     <ul className="image-list" aria-label="Selected reference images">
-                      {data.imageNames.map((name, index) => (
-                        <li key={`${name}-${index}`}>
-                          <span>{name}</span>
+                      {imagePreviews.map((preview, index) => (
+                        <li key={preview.id}>
+                          <img src={preview.url} alt={`Reference image ${index + 1}`} />
                           <button
                             type="button"
-                            aria-label={`Remove ${name}`}
+                            aria-label={`Remove ${preview.name}`}
                             onClick={() => removeReferenceImage(index)}
                           >
                             Remove
