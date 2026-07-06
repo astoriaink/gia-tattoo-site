@@ -104,6 +104,43 @@ export default function BookNowPage() {
     setData((current) => ({ ...current, [field]: value }));
   };
 
+  const addReferenceImages = (files: File[]) => {
+    setData((current) => {
+      const nextFiles = [...current.imageFiles];
+
+      files.forEach((file) => {
+        const isDuplicate = nextFiles.some(
+          (existingFile) =>
+            existingFile.name === file.name &&
+            existingFile.size === file.size &&
+            existingFile.lastModified === file.lastModified,
+        );
+
+        if (!isDuplicate) {
+          nextFiles.push(file);
+        }
+      });
+
+      return {
+        ...current,
+        imageFiles: nextFiles,
+        imageNames: nextFiles.map((file) => file.name),
+      };
+    });
+  };
+
+  const removeReferenceImage = (indexToRemove: number) => {
+    setData((current) => {
+      const nextFiles = current.imageFiles.filter((_, index) => index !== indexToRemove);
+
+      return {
+        ...current,
+        imageFiles: nextFiles,
+        imageNames: nextFiles.map((file) => file.name),
+      };
+    });
+  };
+
   const goNext = () => {
     if (!canContinue) return;
     setStepIndex((current) => Math.min(current + 1, steps.length - 1));
@@ -245,20 +282,32 @@ export default function BookNowPage() {
                       type="file"
                       accept="image/*"
                       multiple
-                      required
                       onChange={(event) => {
                         const files = Array.from(event.target.files ?? []);
-                        const names = files.map((file) => file.name);
-                        setData((current) => ({ ...current, imageFiles: files, imageNames: names }));
+                        addReferenceImages(files);
+                        event.currentTarget.value = '';
                       }}
                     />
-                    <strong>{data.imageNames.length ? `${data.imageNames.length} image selected` : 'Tap to select images'}</strong>
+                    <strong>
+                      {data.imageNames.length
+                        ? `${data.imageNames.length} image${data.imageNames.length === 1 ? '' : 's'} selected`
+                        : 'Tap to select images'}
+                    </strong>
                   </label>
 
                   {data.imageNames.length ? (
                     <ul className="image-list" aria-label="Selected reference images">
-                      {data.imageNames.map((name) => (
-                        <li key={name}>{name}</li>
+                      {data.imageNames.map((name, index) => (
+                        <li key={`${name}-${index}`}>
+                          <span>{name}</span>
+                          <button
+                            type="button"
+                            aria-label={`Remove ${name}`}
+                            onClick={() => removeReferenceImage(index)}
+                          >
+                            Remove
+                          </button>
+                        </li>
                       ))}
                     </ul>
                   ) : null}
